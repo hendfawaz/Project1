@@ -1,0 +1,30 @@
+.navbar{font-style: oblique;
+    font-size: large;
+padding: 0%;}
+
+.container-fluid{
+    background-color: rgb(211, 211, 250);
+}
+.allitems{
+    display: grid;
+grid-template-columns: 1fr;
+}
+
+#allitems.allitems{
+    display: grid;
+    grid-template-columns: 1fr;}
+
+    .Texetdiv{
+        color: #000;
+        padding: 0%;
+       }
+
+       .h5{
+           padding: 0%;
+       }
+
+
+
+/* @media screen () {
+    
+} */
