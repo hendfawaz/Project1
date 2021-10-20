@@ -1,81 +1,96 @@
 window.onload={}
-const url = `http://pokeapi.co/api/v2/pokemon/1`;
-const url2 = 'https://pokeapi.co/api/v2/pokemon?limit=100&offset=200'
+function display(obj) {
+   let allitems = document.getElementById("allitems");
 
-// fetch(url, {
-//     "method": "GET",
-// }).then((response) => {
-//     return response.json();
-// }).then(
-//     data => {
-//         console.log(data)
-//         console.log(data.name)
-//         console.log(data.sprites)
-//         console.log(data.sprites.front_default)
-
-//      display(data.results);
-//     }
-// ).catch((err) => {
-//     console.log('rejected', err)
-// });
-
-
-// data.sprites= [ 'front_default']
-
- function display (obj){
- let allitems =document.getElementById("allitems");
-
-     console.log(obj.name);
-     console.log(obj.sprites.front_default);
-
-    
     allitems.innerHTML +=
-    `<div class="item">
-    <img src=`+obj.sprites.front_default+`>
-    <h2>`+obj.name+`</h2>
-    </div>`
+        `<div class="item">
+            <img src=` + obj.sprites.front_default +`>
 
+            <h2>` + obj.name.toUpperCase() +
+            `</h2>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                details
+            </button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        
+                            <div class="modal-body">
+
+                            <p>Type:` + displaytypes(obj) + `</p>
+
+                            <p>height:` + obj.height + `m</p>
+                        
+                            <p>weight` + obj.weight + `kg</p>
+                            <p>Abilities:` + displayAbilities(obj) + `</p>
+
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>`;
+}
+ 
+
+ function displayAbilities(obj) {
+   let AllAbilities = "";
+   for (let i = 0; i < obj.abilities.length; i++) {
+     AllAbilities += obj.abilities[i].ability.name + ",";
+   }
+   console.log(AllAbilities);
+   return AllAbilities;
  }
 
+ function displaytypes(obj) {
+   let types = "";
+   for (let i = 0; i < obj.types.length; i++) {
+     types += obj.types[i].type.name + ",";
+   }
+   console.log(types);
+   return types;
+ }
+
+
+
+
+
+
+
+
+
+
+
 const fetchPokemon = () => {
-    for (let i = 0; i <= 18; i++) {
-        const url = `http://pokeapi.co/api/v2/pokemon/${i}`;
+for (let i = 1; i <= 18; i++) {
+ const url = `http://pokeapi.co/api/v2/pokemon/${i}`;
+fetch(url, {
+    "method": "GET",
+ }).then((response) => {
+        return response.json();
+ }).then(
+ data => {
+ display(data);
+ }
+).catch((err) => {
+console.log('rejected', err)
+ });
+ }       
+ }
+fetchPokemon() 
 
-        fetch(url, {
-            "method": "GET",
-        }).then((response) => {
-            return response.json();
-        }).then(
-            data => {
-                console.log(data)
-                // console.log(data.name)
-                // console.log(data.sprites)
-                // console.log(data.sprites.front_default)
-               
-                // let allitems =document.getElementById("allitems");
-                //  for (i=0 ; i<=19 ; i++ ){
-                //      console.log(arr[i]);
-                //      console.log(arr[i].sprites);
-                //     allitems.innerHTML +=
-                //     `<div class="item">
-                //     <img src=`+obj[i].sprites.front_default+`>
-                //     <h2>`+obj[i].name+`</h2>
-                //     </div>`
-        
-             display(data);
-            }
-        ).catch((err) => {
-            console.log('rejected', err)
-        });
-        
 
-    }
-}
-
-fetchPokemon()
+// // 
 
 
 
 
  
-    
+
