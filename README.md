@@ -16,17 +16,12 @@ My Project Talk about Pokémon
 
 
 ## Problems :
-1- 
-2-
-3-
-4-
+1- API have alot of information 
+2-the desingn because i dont have the enough knowledge
 
 
 ## Links: 
 1- https://trello.com/b/M5AT29IW/project1
 2-https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css
 3-https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js
-4-https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js
-5-https://code.jquery.com/jquery-3.2.1.slim.min.js
-6-https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js
-7-http://pokeapi.co/api/v2/pokemon/${i}
+4-http://pokeapi.co/api/v2/pokemon/${i}
